@@ -1,0 +1,11 @@
+streamlit
+openai
+anthropic
+requests
+python-dotenv
+pytest
+pytest-mock
+json-schema
+plotly
+flask
+flask_cors

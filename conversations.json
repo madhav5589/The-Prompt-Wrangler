@@ -1,0 +1,124 @@
+[
+  {
+    "project_name": "Clinical Data Extraction Test 1",
+    "provider": "DeepSeek",
+    "model": "deepseek-chat",
+    "system_prompt": "You are an expert medical assistant specialized in extracting structured data from clinical notes.\n\nCRITICAL RULES:\n1. Use ONLY the exact field names listed above for standard medical data\n2. If a field is not applicable or not mentioned, omit it completely\n3. For components/supplies, use \"components\" field (not \"supplies\" or \"parts\")\n4. For doctor information, use \"ordering_provider\" (not \"doctor\" or \"physician\")\n5. For compliance, use \"compliance_status\" (not \"compliance\" or \"adherence\")\n6. Return only valid JSON without any additional text or explanations\n7. Use arrays for multiple items (features, components, usage, etc.)\n8. If you extract additional relevant information not covered by these fields, you may add extra fields with descriptive names\n9. Do NOT include any emojis in the extracted data values\n\nExtract the information in the following standardized JSON format. Use these EXACT field names when applicable:\n{\n  \"device\": string,\n  \"product\": string,\n  \"mask_type\": string,\n  \"type\": string,\n  \"features\": [string],\n  \"components\": [string],\n  \"add_ons\": [string],\n  \"diagnosis\": string,\n  \"SpO2\": string,\n  \"usage\": [string],\n  \"mobility_status\": string,\n  \"qualifier\": string,\n  \"compliance_status\": string,\n  \"ordering_provider\": string\n}\n\nExample: {\"device\": \"CPAP\", \"components\": [\"full face mask\", \"headgear\", \"filters\"], \"compliance_status\": \"compliant\", \"ordering_provider\": \"Dr. House\"}",
+    "clinical_note": "Patient is non-ambulatory and requires hospital bed with trapeze bar and side rails. Diagnosis: late-stage ALS. Order submitted by Dr. Cuddy.",
+    "response": "```json\n{\n  \"device\": \"hospital bed\",\n  \"components\": [\"trapeze bar\", \"side rails\"],\n  \"diagnosis\": \"late-stage ALS\",\n  \"mobility_status\": \"non-ambulatory\",\n  \"ordering_provider\": \"Dr. Cuddy\"\n}\n```",
+    "structured_data": {
+      "device": "hospital bed",
+      "components": [
+        "trapeze bar",
+        "side rails"
+      ],
+      "diagnosis": "late-stage ALS",
+      "mobility_status": "non-ambulatory",
+      "ordering_provider": "Dr. Cuddy"
+    },
+    "temperature": 0.75,
+    "max_tokens": 512,
+    "response_time": 5.91940712928772,
+    "token_usage": {
+      "prompt_tokens": 399,
+      "completion_tokens": 63,
+      "total_tokens": 462,
+      "prompt_tokens_details": {
+        "cached_tokens": 384
+      },
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 15
+    },
+    "id": 1,
+    "timestamp": "2025-05-31T13:17:58.984898"
+  },
+  {
+    "project_name": "Clinical Data Extraction Test 2",
+    "provider": "DeepSeek",
+    "model": "deepseek-chat",
+    "system_prompt": "You are an expert medical assistant specialized in extracting structured data from clinical notes.\n\nCRITICAL RULES:\n1. Use ONLY the exact field names listed above for standard medical data\n2. If a field is not applicable or not mentioned, omit it completely\n3. For components/supplies, use \"components\" field (not \"supplies\" or \"parts\")\n4. For doctor information, use \"ordering_provider\" (not \"doctor\" or \"physician\")\n5. For compliance, use \"compliance_status\" (not \"compliance\" or \"adherence\")\n6. Return only valid JSON without any additional text or explanations\n7. Use arrays for multiple items (features, components, usage, etc.)\n8. If you extract additional relevant information not covered by these fields, you may add extra fields with descriptive names\n9. Do NOT include any emojis in the extracted data values\n\nExtract the information in the following standardized JSON format. Use these EXACT field names when applicable:\n{\n  \"device\": string,\n  \"product\": string,\n  \"mask_type\": string,\n  \"type\": string,\n  \"features\": [string],\n  \"components\": [string],\n  \"add_ons\": [string],\n  \"diagnosis\": string,\n  \"SpO2\": string,\n  \"usage\": [string],\n  \"mobility_status\": string,\n  \"qualifier\": string,\n  \"compliance_status\": string,\n  \"ordering_provider\": string\n}\n\nExample: {\"device\": \"CPAP\", \"components\": [\"full face mask\", \"headgear\", \"filters\"], \"compliance_status\": \"compliant\", \"ordering_provider\": \"Dr. House\"}",
+    "clinical_note": "Asthma diagnosis confirmed. Prescribing nebulizer with mouthpiece and tubing. Dr. Foreman completed the documentation.",
+    "response": "```json\n{\n  \"device\": \"nebulizer\",\n  \"components\": [\"mouthpiece\", \"tubing\"],\n  \"diagnosis\": \"Asthma\",\n  \"ordering_provider\": \"Dr. Foreman\"\n}\n```",
+    "structured_data": {
+      "device": "nebulizer",
+      "components": [
+        "mouthpiece",
+        "tubing"
+      ],
+      "diagnosis": "Asthma",
+      "ordering_provider": "Dr. Foreman"
+    },
+    "temperature": 0.75,
+    "max_tokens": 512,
+    "response_time": 5.8896660804748535,
+    "token_usage": {
+      "prompt_tokens": 388,
+      "completion_tokens": 48,
+      "total_tokens": 436,
+      "prompt_tokens_details": {
+        "cached_tokens": 384
+      },
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 4
+    },
+    "id": 2,
+    "timestamp": "2025-05-31T13:18:15.675640"
+  },
+  {
+    "project_name": "Clinical Data Extraction Test 3",
+    "provider": "DeepSeek",
+    "model": "deepseek-chat",
+    "system_prompt": "You are an expert medical assistant specialized in extracting structured data from clinical notes.\n\nCRITICAL RULES:\n1. Use ONLY the exact field names listed above for standard medical data\n2. If a field is not applicable or not mentioned, omit it completely\n3. For components/supplies, use \"components\" field (not \"supplies\" or \"parts\")\n4. For doctor information, use \"ordering_provider\" (not \"doctor\" or \"physician\")\n5. For compliance, use \"compliance_status\" (not \"compliance\" or \"adherence\")\n6. Return only valid JSON without any additional text or explanations\n7. Use arrays for multiple items (features, components, usage, etc.)\n8. If you extract additional relevant information not covered by these fields, you may add extra fields with descriptive names\n9. Do NOT include any emojis in the extracted data values\n\nExtract the information in the following standardized JSON format. Use these EXACT field names when applicable:\n{\n  \"device\": string,\n  \"product\": string,\n  \"mask_type\": string,\n  \"type\": string,\n  \"features\": [string],\n  \"components\": [string],\n  \"add_ons\": [string],\n  \"diagnosis\": string,\n  \"SpO2\": string,\n  \"usage\": [string],\n  \"mobility_status\": string,\n  \"qualifier\": string,\n  \"compliance_status\": string,\n  \"ordering_provider\": string\n}\n\nExample: {\"device\": \"CPAP\", \"components\": [\"full face mask\", \"headgear\", \"filters\"], \"compliance_status\": \"compliant\", \"ordering_provider\": \"Dr. House\"}",
+    "clinical_note": "Patient diagnosed with COPD, SpO2 measured at 87% on room air. Needs portable oxygen concentrator for use during exertion and sleep. Dr. Chase signed the order.",
+    "response": "```json\n{\n  \"diagnosis\": \"COPD\",\n  \"SpO2\": \"87%\",\n  \"device\": \"portable oxygen concentrator\",\n  \"usage\": [\"during exertion\", \"during sleep\"],\n  \"ordering_provider\": \"Dr. Chase\"\n}\n```",
+    "structured_data": {
+      "device": "portable oxygen concentrator",
+      "diagnosis": "COPD",
+      "SpO2": "87%",
+      "usage": [
+        "during exertion",
+        "during sleep"
+      ],
+      "ordering_provider": "Dr. Chase"
+    },
+    "temperature": 0.75,
+    "max_tokens": 512,
+    "response_time": 5.6267991065979,
+    "token_usage": {
+      "prompt_tokens": 401,
+      "completion_tokens": 59,
+      "total_tokens": 460,
+      "prompt_tokens_details": {
+        "cached_tokens": 384
+      },
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 17
+    },
+    "id": 3,
+    "timestamp": "2025-05-31T13:18:28.374643"
+  },
+  {
+    "project_name": "Clinical Data Extraction",
+    "provider": "DeepSeek",
+    "model": "deepseek-chat",
+    "system_prompt": "You are an expert medical assistant specialized in extracting structured data from clinical notes.\n\nCRITICAL RULES:\n1. Use ONLY the exact field names listed above for standard medical data\n2. If a field is not applicable or not mentioned, omit it completely\n3. For components/supplies, use \"components\" field (not \"supplies\" or \"parts\")\n4. For doctor information, use \"ordering_provider\" (not \"doctor\" or \"physician\")\n5. For compliance, use \"compliance_status\" (not \"compliance\" or \"adherence\")\n6. Return only valid JSON without any additional text or explanations\n7. Use arrays for multiple items (features, components, usage, etc.)\n8. If you extract additional relevant information not covered by these fields, you may add extra fields with descriptive names\n9. Do NOT include any emojis in the extracted data values\n\nExtract the information in the following standardized JSON format. Use these EXACT field names when applicable:\n{\n  \"device\": string,\n  \"product\": string,\n  \"mask_type\": string,\n  \"type\": string,\n  \"features\": [string],\n  \"components\": [string],\n  \"add_ons\": [string],\n  \"diagnosis\": string,\n  \"SpO2\": string,\n  \"usage\": [string],\n  \"mobility_status\": string,\n  \"qualifier\": string,\n  \"compliance_status\": string,\n  \"ordering_provider\": string\n}\n\nExample: {\"device\": \"CPAP\", \"components\": [\"full face mask\", \"headgear\", \"filters\"], \"compliance_status\": \"compliant\", \"ordering_provider\": \"Dr. House\"}",
+    "clinical_note": "Patient is a 45-year-old male with hypertension.",
+    "response": "```json\n{}\n```",
+    "structured_data": {},
+    "temperature": 0.3,
+    "max_tokens": 512,
+    "response_time": 3.842085838317871,
+    "token_usage": {
+      "prompt_tokens": 376,
+      "completion_tokens": 5,
+      "total_tokens": 381,
+      "prompt_tokens_details": {
+        "cached_tokens": 320
+      },
+      "prompt_cache_hit_tokens": 320,
+      "prompt_cache_miss_tokens": 56
+    },
+    "id": 4,
+    "timestamp": "2025-05-31T13:18:49.778049"
+  }
+]

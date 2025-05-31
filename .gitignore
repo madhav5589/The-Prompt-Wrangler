@@ -1,0 +1,26 @@
+# Python cache and compiled files
+__pycache__/
+*.pyc
+
+# Environment variables and secrets (API Keys, etc.)
+# For assessment purposes, keeping this file tracked. In practice, this file should be ignored.
+#.env
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# OS and editor files
+.DS_Store
+*.swp
+
+# Logs and temp files
+*.log
+
+# Jupyter/IPython
+.ipynb_checkpoints/
+
+# (Optional) User-uploaded or generated files
+# For assessment purposes, keeping this file tracked. In practice, this file should be ignored.
+#conversations.json
