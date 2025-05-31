@@ -22,7 +22,7 @@ The Prompt Wrangler is a lightweight web tool for extracting structured clinical
 1. Clone this Repository
 2. Install Dependencies - `pip install -r requirements.txt`
 3. Set API keys as environment variables for LLM providers you wish to use:
-  Add `.env` file (at the project root level) and add your API key(s):
+  Edit `.env` file by adding your API key(s):
     ```
     OPENAI_API_KEY=your_openai_api_key_here
     ANTHROPIC_API_KEY=your_anthropic_api_key_here
